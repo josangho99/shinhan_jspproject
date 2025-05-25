@@ -1,0 +1,128 @@
+/* Custom styles for the shop page */
+
+/* Ensure font consistency and basic styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Table specific styling for better readability */
+.shop-table {
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* subtle shadow for the table */
+    border-radius: 8px; /* Rounded corners for the entire table */
+    overflow: hidden; /* Ensures content respects border-radius */
+}
+
+/* Table header styling */
+.shop-table thead th {
+    background-color: #343a40; /* Darker background for header */
+    color: white;
+    font-weight: bold;
+    text-align: center; /* Center align header text */
+    vertical-align: middle;
+    padding: 15px 10px; /* More padding for header cells */
+    border-bottom: none; /* Remove default border from header */
+}
+
+/* Table body row and cell styling */
+.shop-table tbody td {
+    vertical-align: middle;
+    padding: 12px 10px; /* Padding for body cells */
+    font-size: 0.95em; /* Slightly smaller font size for data */
+}
+
+/* Striped rows for better readability */
+.shop-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Light grey for even rows */
+}
+
+/* Hover effect for rows */
+.shop-table tbody tr:hover {
+    background-color: #e9ecef; /* Slightly darker grey on hover */
+    cursor: pointer;
+}
+
+/* Center align specific columns */
+.shop-table td:nth-child(1), /* productNum */
+.shop-table td:nth-child(3), /* price */
+.shop-table td:nth-child(5), /* totalSales */
+/* .shop-table td:nth-child(7), /* avgRating - removed as it's handled by star-rating */
+.shop-table td:nth-child(8), /* createdAt */
+.td_inventory, /* inventory */
+.td_isActive /* isActive */
+{
+    text-align: center;
+}
+
+/* Right align price for better financial display */
+.shop-table td:nth-child(3) { /* price */
+    text-align: right;
+    font-weight: bold;
+    color: #007bff; /* A nice blue for price */
+}
+
+/* Specific styling for inventory (e.g., if low stock) */
+.td_inventory {
+    font-weight: bold;
+}
+
+/* Specific styling for isActive status */
+.td_isActive {
+    font-weight: bold;
+}
+.td_isActive:contains("true"), .td_isActive:contains("True") {
+    color: #28a745; /* Green for active/true */
+}
+.td_isActive:contains("false"), .td_isActive:contains("False") {
+    color: #dc3545; /* Red for inactive/false */
+}
+
+/* --- Star Rating Specific Styles --- */
+.star-rating {
+    color: #FFD700; /* Gold color for stars */
+    font-size: 1.1em; /* Adjust star size */
+    text-align: center; /* Center align stars in the cell */
+    white-space: nowrap; /* Prevent stars from wrapping */
+    display: inline-block; /* Allow padding/margin if needed */
+}
+
+.star-rating i {
+    margin: 0 1px; /* Small space between stars */
+}
+
+.star-rating .empty-star {
+    color: #ccc; /* Lighter color for empty stars */
+}
+
+.rating-text {
+    font-size: 0.85em; /* Smaller text for the number rating */
+    color: #555;
+    margin-left: 5px; /* Space between stars and text */
+}
+
+.shop-table td:nth-child(7) { /* avgRating column */
+    text-align: center; /* Center align the entire rating cell */
+}
+/* ... (기존 shop_style.css 내용 유지) ... */
+
+/* --- 정렬/검색 UI 섹션 스타일 --- */
+/* 부모 flex 컨테이너: justify-content-end mb-3 클래스가 이미 적용됨 */
+/* .d-flex.justify-content-end.mb-3 {
+    // 부트스트랩 클래스로 대부분 처리되므로 추가적인 CSS는 최소화
+} */
+
+/* 드롭다운 버튼 기본 스타일 조정 (필요시) */
+#sortDropdown {
+    /* 기본 부트스트랩 스타일이 잘 작동하므로 크게 변경할 필요 없을 수 있음 */
+    /* background-color: #6c757d; // btn-secondary 색상 */
+    /* border-color: #6c757d; */
+    padding: 0.375rem 0.75rem; /* 부트스트랩 기본값 유지 또는 조정 */
+    font-size: 0.9rem; /* 텍스트 크기 조정 */
+}
+
+/* Optional: 드롭다운 메뉴 아이템 호버 시 배경색 변경 (더 눈에 띄게) */
+.dropdown-item:hover {
+    background-color: var(--main-color); /* main-color를 사용하여 브랜드 일관성 유지 */
+    color: white; /* 텍스트 색상 변경 */
+}

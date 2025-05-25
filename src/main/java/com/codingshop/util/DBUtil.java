@@ -6,13 +6,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DBUtil {
+import org.apache.catalina.Context;
 
+public class DBUtil {
+	
 	// Oracle DB연결을 Util로 만들었음
 	public static Connection getConnection() {
 		Connection conn = null;
 		//String url = "jdbc:oracle:thin:@192.168.0.18:1521:xe", userid = "hr", userpassword = "hr"; //강사컴
-		String url = "jdbc:oracle:thin:@192.168.0.94:1521:xe", userid = "codingshop", userpassword = "coding";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe", userid = "codingshop", userpassword = "coding";
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, userid, userpassword);

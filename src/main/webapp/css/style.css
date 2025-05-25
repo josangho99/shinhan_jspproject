@@ -1,1 +1,101 @@
 @charset "UTF-8";
+:root{
+    --main-color: #39C75A;
+    --padding-default: 30px;
+    --margin-default: 30px;
+    --login_form-width: 800px;
+    --input-height:60px;
+    --border-radius-default:5px;
+       
+}
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	height:100vh - calc(var(--margin-default) * 5);
+	background-image: linear-gradient(120deg, #80FF72, #7EE8FA);
+}
+
+.login_text{
+	margin-top: calc(var(--margin-default) * 2);
+    text-align: center;
+ 	margin-bottom: calc(var(--margin-default) * 2);
+}
+
+.login_option{
+	height:calc(var(--input-height)*3/4);
+	display:flex;
+	list-style: none;
+    width: 100%;
+    border-collapse: collapse;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #ddd;
+}
+
+.login_item{
+	width:100%;
+	border:1px solid black;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:var(--border-radius-default);
+    cursor: pointer; /* Indicate clickable item */
+    transition: all 0.3s ease; /* Smooth transitions for hover/active states */
+}
+
+/* Remove border-radius on adjacent sides for a connected tab look */
+.login_item:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none; /* Remove right border to prevent double border */
+}
+
+.login_item:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Active state for the selected login option */
+.login_item.active {
+    background-color: var(--main-color);
+    color: white;
+    border-color: var(--main-color);
+    border-bottom: 2px solid var(--main-color); /* Thicker bottom border for active tab */
+    position: relative; /* For z-index or other positioning if needed */
+    z-index: 1; /* Bring active tab slightly forward if borders overlap */
+}
+
+/* Hover effect for non-active login options */
+.login_item:not(.active):hover {
+    background-color: #f0f0f0; /* Light grey background on hover */
+    color: var(--main-color); /* Main color text on hover */
+    border-color: #ccc; /* Lighter border on hover */
+}
+
+.login_form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login_form .mb-3 input{
+	margin-bottom: calc(var(--margin-default)/2);
+	height: var(--input-height);
+	border-color:black;
+}
+.login_button{
+	height: 50px;
+	background-color:var(--main-color);
+	color:white;
+    border: none;
+    border-radius:var(--border-radius-default);
+}
+.form_box{
+	margin: 0 auto;
+	margin-top: calc(var(--margin-default) * 5);
+	padding: calc(var(--padding-default)*2);
+	background-color:#ffffff;
+	border-radius:calc(var(--border-radius-default)*2);
+	width:var(--login_form-width);
+}
